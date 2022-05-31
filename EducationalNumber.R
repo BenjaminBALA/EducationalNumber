@@ -7,7 +7,7 @@ library(MASS)
 library(car)
 
 
-adult <- read.csv("C:/Users/benan/Desktop/ExmPA-Actex/adult.csv")
+adult <- read.csv("C:/Users/.../Desktop/.../adult.csv")
 
 set.seed(123)  
 
