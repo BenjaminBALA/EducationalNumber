@@ -1,11 +1,7 @@
-install.packages("tidyverse")
 library(tidyverse)
 library(modelr)
-install.packages("caret")
 library(caret)
 library(MASS)
-library(car)
-
 
 adult <- read.csv("C:/Users/.../Desktop/.../adult.csv")
 
@@ -36,6 +32,7 @@ AIC(model1) #AIC of model 1
 AIC(model2) #AIC of model 2
 AIC(model3) #AIC of model 3
 AIC(model4) #AIC of model 4
+#Having these four AIC models compares the AIC relative to other models
 
 stepAIC(model1)
 #This function runs the AIC stepwise selection of the model and returns the best model for AIC predictive performance
@@ -54,5 +51,8 @@ pred <- predict(model6, newdata = test)
 summary(model6)
 
 error <- test$educational.num - pred
+#Finds the error as the difference of the test set and the prediction
+
 RMSE <- sqrt(mean(error^2))
 RMSE
+#Evaluates the root mean square error of the model
